@@ -1,15 +1,17 @@
 
 from argparse import Action
 from time import sleep
-from base.base_class import Base
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 from selenium.webdriver.common.action_chains import ActionChains
+from pages.vacuum_cleaner_filter_selection import Vacuum_cleaner_filter_selection
+from pages.last_page import Last_page
+from base.base_class import Base
 
 
-class Main_page(Base):
+class Main_page(Base,Vacuum_cleaner_filter_selection,Last_page):
     url = 'https://www.maunfeld.ru/'
     
 
@@ -42,11 +44,11 @@ class Main_page(Base):
     def get_chois_product_vacuum_cleaner_pickup(self):
         return WebDriverWait(self.driver , 30).until(EC.element_to_be_clickable((By.XPATH,self.chois_product_vacuum_cleaner_pickup)))
     
-    def get_chois_product_vacuum_cleaner_pickup_dream(self):
-        return WebDriverWait(self.driver , 30).until(EC.element_to_be_clickable((By.XPATH,self.chois_product_vacuum_cleaner_pickup_dream)))
+    #def get_chois_product_vacuum_cleaner_pickup_dream(self):
+    #    return WebDriverWait(self.driver , 30).until(EC.element_to_be_clickable((By.XPATH,self.chois_product_vacuum_cleaner_pickup_dream)))
 
-    def get_chois_product_vacuum_cleaner_pickup_dream_clining(self):
-        return WebDriverWait(self.driver , 30).until(EC.element_to_be_clickable((By.XPATH,self.chois_product_vacuum_cleaner_pickup_dream_clining)))
+    #def get_chois_product_vacuum_cleaner_pickup_dream_clining(self):
+    #    return WebDriverWait(self.driver , 30).until(EC.element_to_be_clickable((By.XPATH,self.chois_product_vacuum_cleaner_pickup_dream_clining)))
     
     def get_chois_cart1(self):     
         return WebDriverWait(self.driver , 30).until(EC.element_to_be_clickable((By.XPATH,self.chois_cart1)))
@@ -80,29 +82,29 @@ class Main_page(Base):
         self.close()
         self.close1()
         time.sleep(2)
-        self.chose()
-        time.sleep(3)
+        #self.chose()
+        #time.sleep(3)
         
-        self.scroll1()
-        self.get_chois_product_vacuum_cleaner_pickup_dream().click()
-        time.sleep(2)
-        self.get_chois_product_vacuum_cleaner_pickup_dream_clining().click()
-        time.sleep(2)
+        #self.scroll1()
+        #self.get_chois_product_vacuum_cleaner_pickup_dream().click()
+        #time.sleep(2)
+        #self.get_chois_product_vacuum_cleaner_pickup_dream_clining().click()
+        #time.sleep(2)
         
-        self.get_chois_cart1().click()
-        time.sleep(2)
-        self.get_chois_cart2().click()
-        time.sleep(2)
-        self.double_click()
-        time.sleep(2)
-        self.get_chois_cart5().click()
-        time.sleep(4)
-        self.get_chois_cart5().click()
-        time.sleep(4)
-        self.get_chois_cart4().click()
-        time.sleep(4)
+        #self.get_chois_cart1().click()
+        #time.sleep(2)
+        #self.get_chois_cart2().click()
+        #time.sleep(2)
+        #self.double_click()
+        #time.sleep(2)
+        #self.get_chois_cart5().click()
+        #time.sleep(4)
+        #self.get_chois_cart5().click()
+        #time.sleep(4)
+        #self.get_chois_cart4().click()
+        #time.sleep(4)
  
-        print("click select product_1")
+        #print("click select product_1")
 
 
     #Methods
@@ -111,4 +113,6 @@ class Main_page(Base):
         self.driver.maximize_window()
         self.get_current_url()
         self.click_select_product_1()
+        #self.click_select_product_2()
+        #self.click_select_product_3()
 

@@ -21,6 +21,8 @@ def test_buy_product_1():
 
         mp = Main_page(driver)
         mp.select_products_1()
+        mp.click_select_product_2()
+        mp.click_select_product_3()
         mp.assert_url("https://www.maunfeld.ru/blog")
 
 
