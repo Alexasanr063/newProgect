@@ -1,4 +1,4 @@
-
+#import allure
 from argparse import Action
 from time import sleep
 from selenium.webdriver.common.by import By
@@ -6,12 +6,13 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 from selenium.webdriver.common.action_chains import ActionChains
-from pages.vacuum_cleaner_filter_selection import Vacuum_cleaner_filter_selection
-from pages.last_page import Last_page
+#from pages.vacuum_cleaner_filter_selection import Vacuum_cleaner_filter_selection
+#from pages.last_page import Last_page
 from base.base_class import Base
+#from utilities.loger import Logger
 
 
-class Main_page(Base,Vacuum_cleaner_filter_selection,Last_page):
+class Main_page(Base):
     url = 'https://www.maunfeld.ru/'
     
 
@@ -71,6 +72,8 @@ class Main_page(Base,Vacuum_cleaner_filter_selection,Last_page):
     #Actions
    
     def click_select_product_1(self):
+        #Logger.add_start_step(method = "click_select_product_1")
+        #self.get_current_url()
         self.get_select_product_1().click()
         time.sleep(2)
         self.get_select_product_vacuum_cleaner().click()
@@ -82,6 +85,7 @@ class Main_page(Base,Vacuum_cleaner_filter_selection,Last_page):
         self.close()
         self.close1()
         time.sleep(2)
+        #Logger.add_end_step(url = self.driver.current_url, method = "click_select_product_1")
         #self.chose()
         #time.sleep(3)
         
@@ -109,10 +113,11 @@ class Main_page(Base,Vacuum_cleaner_filter_selection,Last_page):
 
     #Methods
     def select_products_1(self):
-        self.driver.get(self.url)
-        self.driver.maximize_window()
-        self.get_current_url()
-        self.click_select_product_1()
-        #self.click_select_product_2()
-        #self.click_select_product_3()
+        #with allure.step("select_products_1"):
+            self.driver.get(self.url)
+            self.driver.maximize_window()
+            self.get_current_url()
+            self.click_select_product_1()
+            #self.click_select_product_2()
+            #self.click_select_product_3()
 

@@ -1,0 +1,11 @@
+
+-----
+Test: tests/test_buy_product.py::test_buy_product_1 (call)
+Start time: 2023-02-25 16:22:27.349794
+Start name method: click_select_product_1
+
+End time: 2023-02-25 16:22:38.408458
+End name method: click_select_product_1
+URL: https://www.maunfeld.ru/catalog/pylesosy
+
+-----

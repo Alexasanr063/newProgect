@@ -24,6 +24,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="base\" />
+    <Folder Include="logs\" />
+    <Folder Include="utilities\" />
     <Folder Include="tests\" />
     <Folder Include="pages\" />
   </ItemGroup>
@@ -34,6 +36,8 @@
     <Compile Include="base\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="pages\last_page.py" />
+    <Compile Include="pages\vacuum_cleaner_filter_selection.py" />
     <Compile Include="pages\main_page.py">
       <SubType>Code</SubType>
     </Compile>
@@ -41,6 +45,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tests\test_buy_product.py" />
+    <Compile Include="utilities\loger.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

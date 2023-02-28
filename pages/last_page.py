@@ -5,9 +5,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 from selenium.webdriver.common.action_chains import ActionChains
+from pages.main_page import Main_page
+#import allure
 
-
-class Last_page():
+class Last_page(Main_page):
     def __init__(self,driver):
         self.driver = driver
     
@@ -42,17 +43,18 @@ class Last_page():
    
 
     def click_select_product_3(self):
-        self.get_chois_cart1().click()
-        time.sleep(2)
-        self.get_chois_cart2().click()
-        time.sleep(2)
-        self.double_click()
-        time.sleep(2)
-        self.get_chois_cart5().click()
-        time.sleep(4)
-        self.get_chois_cart5().click()
-        time.sleep(4)
-        self.get_chois_cart4().click()
-        time.sleep(4)
+        #with allure.step("click_select_product_3"):
+            self.get_chois_cart1().click()
+            time.sleep(2)
+            self.get_chois_cart2().click()
+            time.sleep(2)
+            self.double_click()
+            time.sleep(2)
+            self.get_chois_cart5().click()
+            time.sleep(4)
+            self.get_chois_cart5().click()
+            time.sleep(4)
+            self.get_chois_cart4().click()
+            time.sleep(4)
 
     

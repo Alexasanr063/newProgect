@@ -6,14 +6,15 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 from selenium.webdriver.common.action_chains import ActionChains
+from pages.main_page import Main_page
+#import allure
 
-
-class Vacuum_cleaner_filter_selection():
+class Vacuum_cleaner_filter_selection(Main_page):
   
     
 
     def __init__(self,driver):
-        super().__init__(driver)
+        object.__init__(driver)
         self.driver = driver
 
 
@@ -36,11 +37,12 @@ class Vacuum_cleaner_filter_selection():
         return WebDriverWait(self.driver , 30).until(EC.element_to_be_clickable((By.XPATH,self.chois_product_vacuum_cleaner_pickup_dream_clining)))
 
     def click_select_product_2(self):
-        self.chose()
-        time.sleep(3)
+        #with allure.step("click_select_product_2"):
+            self.chose()
+            time.sleep(3)
         
-        self.scroll1()
-        self.get_chois_product_vacuum_cleaner_pickup_dream().click()
-        time.sleep(2)
-        self.get_chois_product_vacuum_cleaner_pickup_dream_clining().click()
-        time.sleep(2)
+            self.scroll1()
+            self.get_chois_product_vacuum_cleaner_pickup_dream().click()
+            time.sleep(2)
+            self.get_chois_product_vacuum_cleaner_pickup_dream_clining().click()
+            time.sleep(2)
